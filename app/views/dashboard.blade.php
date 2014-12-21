@@ -11,5 +11,7 @@
 @section('content')
 
     <div class="box-body">
+
+    	<a href="{{ URL::to('logout') }}">Logout</a>
   
 @stop
