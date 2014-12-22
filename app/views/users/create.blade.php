@@ -22,8 +22,8 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('email', 'Email') }}
-        {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
+        {{ Form::label('password', 'Passwort') }}
+        {{ Form::password('password', Input::old('password'), array('class' => 'form-control')) }}
     </div>
 
     {{ Form::submit('Create the Nerd!', array('class' => 'btn btn-primary')) }}
