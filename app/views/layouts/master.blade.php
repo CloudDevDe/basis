@@ -53,6 +53,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+                @if(Auth::check()) 
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
@@ -78,6 +79,7 @@
                     	</li>
                     </ul>
                 </div>
+                @endif
             </nav>
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
