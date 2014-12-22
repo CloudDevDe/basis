@@ -1,16 +1,24 @@
 @extends('layouts.master')
 
-@section('content')
-
 @section ('title')
     Benutzerübersicht
 @stop
 
-
+@section('content')
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
+
+<div class="box box-primary">
+    <div class="box-header">
+        <div class="pull-right box-tools">
+                <a class="btn btn-small btn-info" href="{{ URL::to('users/create') }}">Anlegen</a>
+            </a>
+        </div>
+        <i class="fa fa-user"></i>
+        <h3 class="box-title">Benutzerverwaltung</h3>
+    </div>
 
 <table class="table table-striped table-bordered">
     <thead>
