@@ -58,7 +58,7 @@
                         <!-- User Account: style can be found in dropdown.less -->
                     	<li class="dropdown user user-menu">
                     		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    			<span class="glyphicon glyphicon-user"></span> Platzhalter <span class="caret"></span>
+                    			<span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }} <span class="caret"></span>
                     		</a>
                     		<ul class="dropdown-menu">
                     			<!-- User image -->
@@ -94,6 +94,9 @@
     					<li>
     						<a href="{{ URL::to('/') }}"><span class="fa fa-dashboard"></span> Dashboard</a>
     					</li>
+                        <li>
+                            <a href="{{ URL::to('users') }}"><span class="fa fa-users"></span> Benutzer</a>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->

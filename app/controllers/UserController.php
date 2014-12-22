@@ -24,9 +24,14 @@ class UserController extends \BaseController {
         // read more on validation at http://laravel.com/docs/validation
         $rules = array(
             'username'       => 'required',
-            'email'      => 'required|email',
+            'email'          => 'required|email',
         );
-        $validator = Validator::make(Input::all(), $rules);
+
+        $messages = array(
+            'username.required' => 'Der Benutzername fehlt oder ist nicht zulässig.',
+            'email.required' => 'Die Emailadresse fehlt oder ist nicht zulässig.'
+        );
+        $validator = Validator::make(Input::all(), $rules, $messages);
 
         // process the login
         if ($validator->fails()) {
@@ -84,8 +89,8 @@ class UserController extends \BaseController {
         } else {
             // store
             $user = User::find($id);
-            $user->username       = Input::get('username');
-            $user->email      = Input::get('email');
+            $user->username     = Input::get('username');
+            $user->email        = Input::get('email');
             $user->save();
 
             // redirect
