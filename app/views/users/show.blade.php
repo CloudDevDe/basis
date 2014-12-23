@@ -1,33 +1,19 @@
-<!-- app/views/nerds/show.blade.php -->
+@extends('layouts.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Look! I'm CRUDding</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@section ('title')
+    Profil
+@stop
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('users') }}">Nerd Alert</a>
+@section ('content')
+
+<div class="box box-primary">
+    <div class="box-header">
+<br>
     </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('users') }}">View All Nerds</a></li>
-        <li><a href="{{ URL::to('users/create') }}">Create a Nerd</a>
-    </ul>
-</nav>
 
-<h1>Showing {{ $user->username }}</h1>
-
-    <div class="jumbotron text-center">
         <h2>{{ $user->username }}</h2>
         <p>
             <strong>Email:</strong> {{ $user->email }}<br>
         </p>
-    </div>
 
-</div>
-</body>
-</html>
+@stop

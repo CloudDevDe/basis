@@ -1,45 +1,49 @@
-<!-- app/views/nerds/edit.blade.php -->
+@extends('layouts.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Look! I'm CRUDding</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@section ('title')
+    Benutzer bearbeiten
+@stop
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('users') }}">Nerd Alert</a>
+@section ('content')
+
+<div class="box box-primary">
+    <div class="box-header">
+<br>
     </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('users') }}">View All Nerds</a></li>
-        <li><a href="{{ URL::to('users/create') }}">Create a Nerd</a>
-    </ul>
-</nav>
-
-<h1>Edit {{ $user->username }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
-{{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }}
+{{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT', 'class' => 'form-horizontal')) }}
 
     <div class="form-group">
-        {{ Form::label('username', 'Username') }}
+        {{ Form::label('username', 'Benutzername', ['class' => 'col-sm-1 control-label']) }}
+        <div class="col-sm-6">
         {{ Form::text('username', null, array('class' => 'form-control')) }}
+        </div>
     </div>
 
     <div class="form-group">
-        {{ Form::label('email', 'Email') }}
-        {{ Form::email('email', null, array('class' => 'form-control')) }}
+        {{ Form::label('email', 'Email', ['class' => 'col-sm-1 control-label']) }}
+        <div class="col-sm-6">
+        {{ Form::text('email', null, array('class' => 'form-control')) }}
+        </div>
     </div>
 
-    {{ Form::submit('Edit the Nerd!', array('class' => 'btn btn-primary')) }}
+    <div class="form-group">
+        {{ Form::label('password', 'Passwort', ['class' => 'col-sm-1 control-label']) }}
+        <div class="col-sm-6">
+        {{ Form::text('password', null, array('class' => 'form-control')) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-6">
+            {{ Form::submit('Bearbeiten', ['class' => 'btn btn-default']) }}
+        </div>
+    </div>
 
 {{ Form::close() }}
+<br>
 
-</div>
-</body>
-</html>
+@stop
