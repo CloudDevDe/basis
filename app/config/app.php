@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'AuraIsHere\LaravelMultiTenant\LaravelMultiTenantServiceProvider',
+		'Zizaco\Entrust\EntrustServiceProvider',
 
 	),
 
@@ -190,6 +191,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 		'TenantScope' 		=> 'AuraIsHere\LaravelMultiTenant\Facades\TenantScopeFacade',
+		'Entrust'    		=> 'Zizaco\Entrust\EntrustFacade',
 
 	),
 
